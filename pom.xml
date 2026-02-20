@@ -32,6 +32,7 @@
     </dependencies>
 
     <build>
+        <finalName>mytest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -42,6 +43,23 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <!-- JAR Plugin for configuring the manifest file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>Cal</mainClass> <!-- Correct main class -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+
+
 
                 <!-- JaCoCo plugin for code coverage -->
                 <plugin>
