@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('') {
+        stage('run test') {
             steps {
                 bat 'mvn test'
 
@@ -69,6 +69,7 @@ pipeline {
                         docker login -u %DOCKER_USER% -p %DOCKER_PASS%
                         docker push %DOCKERHUB_REPO%:%DOCKER_IMAGE_TAG%
                     '''
+                    }
             }
         }
 
